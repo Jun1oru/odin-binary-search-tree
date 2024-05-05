@@ -25,7 +25,7 @@ console.log('Tree inOrder: ', myTree.inOrder());
 console.log('Tree postOrder: ', myTree.postOrder());
 insertRandomNumbers(5, myTree);
 console.log(`Is tree balanced? ${myTree.isBalanced()}`);
-myTree.rebalance();
+// myTree.rebalance(); -- Update, rebalance is called after insert and delete function, no point in calling it anymore.
 console.log(`Is tree balanced? ${myTree.isBalanced()}`);
 console.log('Tree levelOrder: ', myTree.levelOrder());
 console.log('Tree preOrder: ', myTree.preOrder());

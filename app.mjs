@@ -74,6 +74,7 @@ export class Tree {
       node.right = this.insert(node.right, value);
     }
 
+    this.rebalance();
     return node;
   }
 
@@ -95,6 +96,7 @@ export class Tree {
       root.right = this.delete(root.right, root.data);
     }
 
+    this.rebalance();
     return root;
   }
 
@@ -252,19 +254,6 @@ export class Tree {
 
   rebalance() {
     if (this.isBalanced() === true) return;
-    // const myArray = this.inOrder();
-    // const sortArray = [];
-    // myArray.forEach((elem) => {
-    //   sortArray.push(elem.data);
-    // });
-    // const myArraySorted = mergeSort(sortArray);
-    // this.array = sortArray;
-    // this.sortedArray = myArraySorted;
-    // this.root = this.buildTree(
-    //   this.sortedArray,
-    //   0,
-    //   this.sortedArray.length - 1
-    // );
     const myArray = this.inOrder();
     const myArraySorted = mergeSort(myArray);
     this.array = myArray;
